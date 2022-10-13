@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbxFiltroCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbxNome
@@ -134,11 +137,45 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Categoria";
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(588, 120);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(94, 29);
+            this.btnFiltrar.TabIndex = 10;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(588, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Filtrar Por Categoria";
+            // 
+            // cbxFiltroCategoria
+            // 
+            this.cbxFiltroCategoria.FormattingEnabled = true;
+            this.cbxFiltroCategoria.Items.AddRange(new object[] {
+            "Cliente",
+            "Funcionário",
+            "Fornecedor"});
+            this.cbxFiltroCategoria.Location = new System.Drawing.Point(588, 77);
+            this.cbxFiltroCategoria.Name = "cbxFiltroCategoria";
+            this.cbxFiltroCategoria.Size = new System.Drawing.Size(129, 28);
+            this.cbxFiltroCategoria.TabIndex = 13;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxFiltroCategoria);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -173,5 +210,8 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button btnFiltrar;
+        private Label label5;
+        private ComboBox cbxFiltroCategoria;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace WinFormsApp1
 {
@@ -30,6 +31,7 @@ namespace WinFormsApp1
                 .Where(x => x.Nome == Produto)
                 .Select(x => x.Valor)
                 .FirstOrDefault();
+
         }
         public void ReceberEntrega()
         {

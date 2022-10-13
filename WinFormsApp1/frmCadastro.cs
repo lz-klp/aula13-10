@@ -53,19 +53,42 @@ namespace WinFormsApp1
                     }
                 }
         }
-        void AtualizarListas()
+        void AtualizarListas(string FiltroCategoria = "")
+        {
+            LimparListas();
+            if(FiltroCategoria == "")
+            {
+                foreach (var pessoa in BD.pessoas)
+                {
+                    lbxNome.Items.Add(pessoa.Nome);
+                    lbxCPF.Items.Add(pessoa.CPF);
+                    lbxTelefone.Items.Add(pessoa.Telefone);
+                    lbxCategoria.Items.Add(pessoa.Categoria);
+                }
+            }
+            else
+            {
+                foreach (var pessoa in BD.pessoas.Where(x=>x.Categoria == FiltroCategoria))
+                {
+                    lbxNome.Items.Add(pessoa.Nome);
+                    lbxCPF.Items.Add(pessoa.CPF);
+                    lbxTelefone.Items.Add(pessoa.Telefone);
+                    lbxCategoria.Items.Add(pessoa.Categoria);
+                }
+            }
+        }
+
+        void LimparListas()
         {
             lbxNome.Items.Clear();
             lbxCPF.Items.Clear();
             lbxCategoria.Items.Clear();
             lbxTelefone.Items.Clear();
-            foreach (var pessoa in BD.pessoas)
-            {
-                lbxNome.Items.Add(pessoa.Nome);
-                lbxCPF.Items.Add(pessoa.CPF);
-                lbxTelefone.Items.Add(pessoa.Telefone);
-                lbxCategoria.Items.Add(pessoa.Categoria);
-            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            AtualizarListas(cbxFiltroCategoria.Text);
         }
     }
 }
