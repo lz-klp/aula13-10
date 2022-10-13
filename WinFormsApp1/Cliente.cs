@@ -13,7 +13,7 @@
                               "Nome: {1}" +"\n"+
                               "CPF: {2}" + "\n" +
                               "Telefone: {3}",
-                              this.categoria,this.Nome,this.CPF,this.Telefone);
+                              this.Categoria,this.Nome,this.CPF,this.Telefone);
             Console.WriteLine(nota);
         }
     }
